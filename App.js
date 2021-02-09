@@ -18,27 +18,23 @@ export default function App() {
       </TouchableOpacity>
       <Text style={{color: '#52575C', marginVertical: 20}}>Ingresa tus credenciales de acceso</Text>
       <StatusBar style="auto" />
-      <TextInput
-      style={styles.input} />
-      <TextInput
-      style={styles.input}/>
+      <TextInput style={styles.input}/>
+      <TextInput style={styles.input}/>
+      <Text keyboardType style={{fontSize:13, color: '#52575C', marginVertical: 20, marginHorizontal: 10, marginLeft: 60}}>He leído y acepto los términos y condiciones y la politica de uso de datos</Text>
       <TouchableOpacity style={styles.buttonRegistry}>
         <Text>REGISTRARME</Text>
       </TouchableOpacity>
     </View>
   );
 }
-// color='#'
-// color=''
-// color='#'
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F6F8FB',
     alignItems: 'center',
-    // justifyContent: 'center',
-    paddingVertical: 45,
+    justifyContent: 'center',
+    paddingVertical: 40,
   },
   title: {
     fontSize: 30,
@@ -55,7 +51,6 @@ const styles = StyleSheet.create({
     paddingTop: 5,
     shadowColor: '#000000',
   },
-
   buttonLinkedin: {
     backgroundColor: '#3567CE',
     alignItems: "center",
@@ -82,8 +77,10 @@ const styles = StyleSheet.create({
     width: 310,
     height: 50,
     backgroundColor: '#FFFFFF',
-    borderBottomColor: 'gray',
+    borderBottomColor: '#0A29CA',
     borderBottomWidth: 1,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
     marginBottom: 10,
   },
   buttonRegistry: {
