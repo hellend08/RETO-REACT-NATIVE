@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, CheckBox} from 'react-native';
 
 export default function App() {
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Registro Médico</Text>
@@ -17,13 +18,19 @@ export default function App() {
         <Text style={styles.textButton}>Continúa con Facebook</Text>
       </TouchableOpacity>
       <Text style={{color: '#52575C', marginVertical: 20}}>Ingresa tus credenciales de acceso</Text>
-      <StatusBar style="auto" />
-      <TextInput style={styles.input}/>
-      <TextInput style={styles.input}/>
-      <Text keyboardType style={{fontSize:13, color: '#52575C', marginVertical: 20, marginHorizontal: 10, marginLeft: 60}}>He leído y acepto los términos y condiciones y la politica de uso de datos</Text>
+      <TextInput placeholder='Correo electrónico o número telefónico' style={styles.input}/>
+      <TextInput placeholder='Contraseña'style={styles.input}/>
+      <View  style={styles.section}>
+      <CheckBox style={styles.checkbox}/>
+      <Text
+      style={{fontSize:13, color: '#52575C', marginVertical: 10, marginHorizontal: 25}}>
+      He leído y acepto los términos y condiciones y la politica de uso de datos
+      </Text>
+      </View>
       <TouchableOpacity style={styles.buttonRegistry}>
         <Text>REGISTRARME</Text>
       </TouchableOpacity>
+      <StatusBar style="auto" />
     </View>
   );
 }
@@ -89,4 +96,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 70,
     borderRadius: 45,
   },
+  section: {
+    flex: 1,
+    flexDirection: 'row',
+    marginVertical: 10,
+    marginHorizontal: 20,
+  },
+  checkbox: {
+    flex: 1,
+    flexDirection: 'row',
+    marginHorizontal: 10,
+    marginVertical: 10,
+  }
 });
