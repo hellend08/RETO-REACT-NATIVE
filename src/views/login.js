@@ -1,10 +1,11 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, CheckBox } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, CheckBox, ScrollView } from 'react-native';
 // import {} from '../../assets/icon/buscar.png'
 
 export default function login({navigation}){
     return (
+      <ScrollView>
         <View style={styles.container}>
         <Text style={styles.title}>Registro Médico</Text>
         <Text style={{color: '#52575C'}}>Ingresa con tus redes sociales</Text>
@@ -38,6 +39,7 @@ export default function login({navigation}){
         </TouchableOpacity>
         <StatusBar style="auto" />
       </View>
+      </ScrollView>
     );
 }
 

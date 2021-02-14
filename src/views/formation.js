@@ -1,33 +1,42 @@
 import React from 'react';
-import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image} from 'react-native';
+import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView} from 'react-native';
+// import { ScrollView } from 'react-native-gesture-handler';
 
 export default function formation({navigation}){
    return (
-    <View style={styles.container}>
-        <Image source={require('../../assets/icon/formacion.png')}></Image>
-    <Text style={styles.title}>Formación</Text>
-    <Text style={styles.subTitle}>Valida tu perfil profesional con Linkedin</Text>
-
-    <View style={styles.containerRow}>
-    <TextInput style={styles.input} placeholder='Pregrado'/>
-    <TextInput style={styles.input} placeholder='CMP'/>
-    </View>
-    <Text>Añadir especializaciones</Text>
-    <View style={styles.containerRow}>
-    <TextInput style={styles.input} placeholder='Postgrado' />
-    <TextInput style={styles.input} placeholder='Especialidad'/>
-    </View>
-    <Text>Experiencia laboral</Text>
-    <View style={styles.containerRow}>
-    <TextInput style={styles.input} placeholder='Empresa'/>
-    <TextInput style={styles.input} placeholder='Puesto'/>
-    </View>
-    <Text>Añadir reconocimiento</Text>
-    <TextInput style={styles.inputExtend} placeholder='Reconocimientos'/>
-    <TouchableOpacity style={styles.buttonContinuar} onPress = {() => navigation.navigate('billing')}>
-        <Text style={styles.textButton}>Continuar</Text>
-    </TouchableOpacity>
-    </View>
+    <ScrollView>
+        <View style={styles.container}>
+            <Image source={require('../../assets/icon/formacion.png')}></Image>
+            <Text style={styles.title}>Formación</Text>
+            <TouchableOpacity>
+            <Image source={require('../../assets/icon/b-linkedin.png')}></Image>
+            </TouchableOpacity>
+            <Text style={styles.subTitle}>Valida tu perfil profesional con Linkedin</Text>
+            <View style={styles.containerRow}>
+                <TextInput style={styles.input} placeholder='Pregrado'/>
+                <TextInput style={styles.input} placeholder='CMP'/>
+            </View>
+            <Text>Añadir especializaciones</Text>
+            <View style={styles.containerRow}>
+                <TextInput style={styles.input} placeholder='Postgrado' />
+                <TextInput style={styles.input} placeholder='Especialidad'/>
+            </View>
+                <Text>Experiencia laboral</Text>
+            <View style={styles.containerRow}>
+                <TextInput style={styles.input} placeholder='Empresa'/>
+                <TextInput style={styles.input} placeholder='Puesto'/>
+                <TouchableOpacity><Text>+</Text></TouchableOpacity>
+            </View>
+            <Text>Añadir reconocimiento</Text>
+            <View style={styles.containerRow}>
+                <TextInput style={styles.inputExtend} placeholder='Reconocimientos'/>
+                <TouchableOpacity><Text>+</Text></TouchableOpacity>
+            </View>
+            <TouchableOpacity style={styles.buttonContinuar} onPress = {() => navigation.navigate('billing')}>
+                <Text style={styles.textButton}>Continuar</Text>
+            </TouchableOpacity>
+        </View>
+    </ScrollView>
     );
 }
 
@@ -37,12 +46,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#F6F8FB',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingVertical: 20,
+        // paddingVertical: 20,
     },
     containerRow:{
         flex:1,
         flexDirection: 'row',
         marginHorizontal: 10,
+        justifyContent: 'center',
     },
     title:{
         fontSize: 18,
@@ -70,7 +80,7 @@ const styles = StyleSheet.create({
     },
     inputExtend: {
         borderRadius: 2,
-        width: 356,
+        width: 330,
         height: 56,
         backgroundColor: '#FFFFFF',
         borderTopLeftRadius: 10,
@@ -86,6 +96,7 @@ const styles = StyleSheet.create({
         borderRadius: 98,
         alignItems: 'center',
         justifyContent: 'center',
+        marginVertical: 10,
     },
     textButton: {
         fontSize: 20,

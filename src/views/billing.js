@@ -1,9 +1,11 @@
 import React from 'react';
-import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image} from 'react-native';
+import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView} from 'react-native';
+// import { ScrollView } from 'react-native-gesture-handler';
 
 
 export default function billing(){
     return (
+        <ScrollView>
         <View style={styles.container}>
        <Image source={require('../../assets/icon/facturaccion.png')}></Image>
     <Text style={styles.title}>Facturación</Text>
@@ -27,6 +29,7 @@ export default function billing(){
         <Text style={styles.textButton}>Continuar</Text>
     </TouchableOpacity>
     </View>
+    </ScrollView>
     );
 }
 
