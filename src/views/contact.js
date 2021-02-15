@@ -21,12 +21,14 @@ export default function contact({navigation}){
                 <Text>Género</Text>
                 <TouchableOpacity style={styles.select}>
                     <Image source={require('../../assets/icon/deselected.png')}></Image>
-                    <Text>Femenino</Text>
+                   
                 </TouchableOpacity>
+                <Text>Femenino</Text>
                 <TouchableOpacity style={styles.select}>
                     <Image source={require('../../assets/icon/deselected.png')}></Image>
-                    <Text>Masculino</Text>
+                    
                 </TouchableOpacity>
+                <Text>Masculino</Text>
             </View>
             <TouchableOpacity style={styles.buttonContinuar} onPress = {() => navigation.navigate('formation')}>
                 <Text style={styles.textButton}>Continuar</Text>
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Roboto',
         fontWeight: 'bold',
         color: '#202945',
-        marginBottom: 80,
+        marginBottom: 50,
     },
     input: {
         borderRadius: 2,
@@ -66,6 +68,8 @@ const styles = StyleSheet.create({
         marginHorizontal: 5,
         marginVertical: 5,
         fontSize: 12,
+        paddingHorizontal: 10,
+
     },
     inputExtend: {
         borderRadius: 2,
@@ -77,10 +81,12 @@ const styles = StyleSheet.create({
         marginHorizontal: 5,
         marginVertical: 8,
         fontSize: 12,
+        paddingHorizontal: 10,
+
     },
     select:{
         flexDirection: 'row',
-        marginHorizontal: 15,
+        marginLeft: 15,
     },
     buttonContinuar: {
         backgroundColor: '#FAC032',

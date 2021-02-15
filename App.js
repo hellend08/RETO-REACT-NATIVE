@@ -17,7 +17,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="login" component={login} options={{title:'Inicio'}}/>
+        <Stack.Screen name="login" component={login} options={{title:'Login'}}/>
         <Stack.Screen name="contact" component={contact} options={{title:'Contacto'}}/>
         <Stack.Screen name="formation" component={formation} options={{title:'Formación'}}/>
         <Stack.Screen name="billing" component={billing} options={{title:'Facturación'}}/>

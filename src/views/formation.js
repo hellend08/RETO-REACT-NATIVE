@@ -77,7 +77,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         lineHeight: 20,
         letterSpacing: 0.1,
-        right: 75,
+        marginRight: 'auto',
+        marginHorizontal: 20,
     },
     vector:{
         marginTop: 25,
@@ -91,7 +92,8 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 10,
         marginHorizontal: 5,
         marginVertical: 10,
-       fontSize: 12,
+        fontSize: 12,
+        paddingHorizontal: 10,
     },
     inputExtend: {
         borderRadius: 2,
@@ -104,6 +106,8 @@ const styles = StyleSheet.create({
         marginVertical: 8,
         marginRight: 35,
         fontSize: 12,
+        paddingHorizontal: 10,
+
     },
     buttonContinuar: {
         backgroundColor: '#FAC032',

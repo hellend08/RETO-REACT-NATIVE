@@ -1,7 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, CheckBox, ScrollView } from 'react-native';
-// import {} from '../../assets/icon/buscar.png'
 
 export default function login({navigation}){
     return (

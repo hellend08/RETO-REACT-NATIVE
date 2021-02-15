@@ -79,7 +79,8 @@ const styles = StyleSheet.create({
         fontFamily: 'Roboto',
         fontWeight: 'normal',
         color: '#000000',
-        right: 95,
+        marginRight: 'auto',
+        marginHorizontal: 40,
     },
     input: {
         borderRadius: 2,
