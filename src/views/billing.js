@@ -1,9 +1,44 @@
 import React from 'react';
 import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView} from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
 
+// const options = {
+//     title: 'Toma una foto',
+//     storageOptions:{
+//         skipBackup: true,
+//         path: 'images,'
+//     }
+// };
+
+// function loadImagePicker() {
+//     ImagePicker.showImagePicker(options, response => {
+
+//         if(response.didCancel){
+//             console.log('user cancelled image picker');
+//         } else if (response.error){
+//             console.log('ImagePicker Error: ', response.error );
+//         }else if (response.customButton){
+//             console.log('User tapped custom button: ', response.customButton);
+//         }else {
+//             console.log(response.data);
+
+//         };
+//     })
+// } onPress={loadImagePicker}
 
 
 export default function billing(){
+
+    let loadImagePicker = async () => {
+       let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync()
+       if(permissionResult.granted === false) {
+           alert('Permission to access camera is required');
+           return;
+       }
+       const pickerResult = await ImagePicker.launchCameraAsync()
+       console.log(pickerResult);
+    }
+
     return (
         <ScrollView>
         <View style={styles.container}>
@@ -25,7 +60,7 @@ export default function billing(){
     </View>
     
     <Text style={styles.parrafo}>DNI Lado A</Text>
-    <TouchableOpacity style={styles.buttonDNIA} >
+    <TouchableOpacity style={styles.buttonDNIA} onPress={loadImagePicker} >
         <Text style={styles.textA}>DNI_cara_doctor_Carlos_Cáceres</Text>
         <Image source={require('../../assets/icon/delete.png')}></Image>
     </TouchableOpacity>
@@ -35,7 +70,7 @@ export default function billing(){
         <Text style={styles.textB}>Arrasta aquí la imagen o selecciona para buscar en tu ordenador</Text>
     </TouchableOpacity>
 
-    <TouchableOpacity style={styles.buttonContinuar}>
+    <TouchableOpacity style={styles.buttonContinuar} onPress={ ()=> alert('¡Registro completo!')}>
         <Text style={styles.textButton}>Continuar</Text>
     </TouchableOpacity>
     </View>
