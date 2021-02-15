@@ -1,6 +1,5 @@
 import React from 'react';
 import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView} from 'react-native';
-// import { ScrollView } from 'react-native-gesture-handler';
 
 export default function formation({navigation}){
    return (
@@ -16,21 +15,25 @@ export default function formation({navigation}){
                 <TextInput style={styles.input} placeholder='Pregrado'/>
                 <TextInput style={styles.input} placeholder='CMP'/>
             </View>
-            <Text>Añadir especializaciones</Text>
+            <Text style={styles.textH2}>Añadir especializaciones</Text>
             <View style={styles.containerRow}>
                 <TextInput style={styles.input} placeholder='Postgrado' />
                 <TextInput style={styles.input} placeholder='Especialidad'/>
             </View>
-                <Text>Experiencia laboral</Text>
+                <Text style={styles.textH2}>Experiencia laboral</Text>
             <View style={styles.containerRow}>
                 <TextInput style={styles.input} placeholder='Empresa'/>
                 <TextInput style={styles.input} placeholder='Puesto'/>
-                <TouchableOpacity><Text>+</Text></TouchableOpacity>
+                <TouchableOpacity>
+                    <Image style={styles.vector} source={require('../../assets/icon/vector.png')}></Image>
+                </TouchableOpacity>
             </View>
-            <Text>Añadir reconocimiento</Text>
+            <Text style={styles.textH2}>Añadir reconocimiento</Text>
             <View style={styles.containerRow}>
                 <TextInput style={styles.inputExtend} placeholder='Reconocimientos'/>
-                <TouchableOpacity><Text>+</Text></TouchableOpacity>
+                <TouchableOpacity>
+                    <Image style={styles.vector} source={require('../../assets/icon/vector.png')}></Image>
+                </TouchableOpacity>
             </View>
             <TouchableOpacity style={styles.buttonContinuar} onPress = {() => navigation.navigate('billing')}>
                 <Text style={styles.textButton}>Continuar</Text>
@@ -67,6 +70,18 @@ const styles = StyleSheet.create({
         color: '#A0A4A8',
         marginVertical: 10,
     },
+    textH2:{
+        fontSize: 14,
+        color: '#52575C',
+        fontFamily: 'Roboto',
+        fontWeight: 'bold',
+        lineHeight: 20,
+        letterSpacing: 0.1,
+        right: 75,
+    },
+    vector:{
+        marginTop: 25,
+    },
     input: {
         borderRadius: 2,
         width: 156,
@@ -80,13 +95,14 @@ const styles = StyleSheet.create({
     },
     inputExtend: {
         borderRadius: 2,
-        width: 330,
+        width: 280,
         height: 56,
         backgroundColor: '#FFFFFF',
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
-        marginHorizontal: 5,
+        marginHorizontal: 10,
         marginVertical: 8,
+        marginRight: 35,
         fontSize: 12,
     },
     buttonContinuar: {

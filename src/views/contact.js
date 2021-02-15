@@ -1,6 +1,5 @@
 import React from 'react';
 import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView} from 'react-native';
-// import Icon from 'react-native-ionicons';
 
 
 export default function contact({navigation}){
@@ -9,7 +8,6 @@ export default function contact({navigation}){
         <View style={styles.container}>
             <Image source={require('../../assets/icon/contact.png')}></Image>
             <Text style={styles.title}>Contacto</Text>
-            {/* <Icon style={{backgroundColor: '#FAC032'}} name="add-circle"></Icon> */}
             <View style={styles.containerRow}>
                 <TextInput style={styles.input} placeholder='Tipo de documento'/>
                 <TextInput style={styles.input} placeholder='N° Documento'/>    
@@ -21,8 +19,14 @@ export default function contact({navigation}){
             <TextInput style={styles.inputExtend} placeholder='Correo electrónico'/>
             <View style={styles.containerRow}>
                 <Text>Género</Text>
-                <Text>Femenino</Text>
-                <Text>Masculino</Text>
+                <TouchableOpacity style={styles.select}>
+                    <Image source={require('../../assets/icon/deselected.png')}></Image>
+                    <Text>Femenino</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.select}>
+                    <Image source={require('../../assets/icon/deselected.png')}></Image>
+                    <Text>Masculino</Text>
+                </TouchableOpacity>
             </View>
             <TouchableOpacity style={styles.buttonContinuar} onPress = {() => navigation.navigate('formation')}>
                 <Text style={styles.textButton}>Continuar</Text>
@@ -50,7 +54,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Roboto',
         fontWeight: 'bold',
         color: '#202945',
-        marginBottom: 50,
+        marginBottom: 80,
     },
     input: {
         borderRadius: 2,
@@ -74,6 +78,10 @@ const styles = StyleSheet.create({
         marginVertical: 8,
         fontSize: 12,
     },
+    select:{
+        flexDirection: 'row',
+        marginHorizontal: 15,
+    },
     buttonContinuar: {
         backgroundColor: '#FAC032',
         width: 170,
@@ -81,6 +89,7 @@ const styles = StyleSheet.create({
         borderRadius: 98,
         alignItems: 'center',
         justifyContent: 'center',
+        marginVertical: 20,
     },
     textButton: {
         fontSize: 20,

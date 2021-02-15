@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView} from 'react-native';
-// import { ScrollView } from 'react-native-gesture-handler';
+
 
 
 export default function billing(){
@@ -9,19 +9,29 @@ export default function billing(){
         <View style={styles.container}>
        <Image source={require('../../assets/icon/facturaccion.png')}></Image>
     <Text style={styles.title}>Facturación</Text>
-    <Text>Tiempo de consulta</Text>
-   
+    <Text style={styles.subTitle}>Tiempo de consulta</Text>
+    <View style={styles.containerRow}>
+        <TouchableOpacity>
+            <Image source={require('../../assets/icon/mas.png')}></Image>
+        </TouchableOpacity>
+        <Text>130'</Text>
+        <TouchableOpacity>
+            <Image source={require('../../assets/icon/menos.png')}></Image>
+        </TouchableOpacity>
+    </View>
     <View style={styles.containerRow}>
         <TextInput style={styles.input} placeholder='Precio de consulta'/>
         <TextInput style={styles.input} placeholder='Precio de segundo control'/>    
     </View>
     
-    <Text>DNI Lado A</Text>
+    <Text style={styles.parrafo}>DNI Lado A</Text>
     <TouchableOpacity style={styles.buttonDNIA} >
-        <Text style={styles.textA}>Tomar foto</Text>
+        <Text style={styles.textA}>DNI_cara_doctor_Carlos_Cáceres</Text>
+        <Image source={require('../../assets/icon/delete.png')}></Image>
     </TouchableOpacity>
-    <Text>DNI Lado B</Text>
+    <Text style={styles.parrafo}>DNI Lado B</Text>
     <TouchableOpacity style={styles.buttonDNIB}>
+        <Image source={require('../../assets/icon/upload.png')}></Image>
         <Text style={styles.textB}>Arrasta aquí la imagen o selecciona para buscar en tu ordenador</Text>
     </TouchableOpacity>
 
@@ -45,6 +55,7 @@ const styles = StyleSheet.create({
         flex:1,
         flexDirection: 'row',
         marginHorizontal: 15,
+        marginVertical: 30,
     },
     title:{
         fontSize: 18,
@@ -52,6 +63,23 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#202945',
         marginBottom: 50,
+    },
+    subTitle:{
+        fontSize: 14,
+        lineHeight: 20,
+        letterSpacing: 0.1,
+        fontFamily: 'Roboto',
+        fontWeight: 'bold',
+        color: '#000000',
+    },
+    parrafo:{
+        fontSize: 14,
+        lineHeight: 20,
+        letterSpacing: 0.1,
+        fontFamily: 'Roboto',
+        fontWeight: 'normal',
+        color: '#000000',
+        right: 95,
     },
     input: {
         borderRadius: 2,
@@ -72,37 +100,42 @@ const styles = StyleSheet.create({
         alignItems: "center",
         height: 40,
         width: 290,
-        marginTop: 15,
+        marginVertical: 15,
         borderRadius: 12,
         borderWidth: 1,
         borderColor: '#E8E8E8',
         paddingTop: 5,
+        flexDirection: 'row',
+        justifyContent: 'center',
       },
     textA: {
+        fontSize: 13,
+        letterSpacing: 0.1,
+        lineHeight: 16,
         color: '#63636A',
         backgroundColor: '#34EEAE',
-        paddingHorizontal: 29,
+        paddingHorizontal: 5,
         borderRadius: 8,
     },
     buttonDNIB: {
         alignItems: "center",
         height: 73,
         width: 290,
-        marginTop: 15,
+        marginVertical: 15,
         borderRadius: 12,
         borderWidth: 1,
         borderColor: '#E8E8E8',
-        paddingTop: 10,
-        paddingHorizontal: 10,
-        // textDecorationColor: '#E8E8E8',
-        
-      },
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        flexDirection: 'row',
+    },
     textB: {
         color: '#63636A',
         fontSize: 13,
         textAlign: 'center',
         letterSpacing: 0.1,
         lineHeight: 16,
+        marginHorizontal: 10,
     },
     buttonContinuar: {
         backgroundColor: '#FAC032',
