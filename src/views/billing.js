@@ -1,80 +1,42 @@
 import React from 'react';
 import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView} from 'react-native';
-import * as ImagePicker from 'expo-image-picker';
-
-// const options = {
-//     title: 'Toma una foto',
-//     storageOptions:{
-//         skipBackup: true,
-//         path: 'images,'
-//     }
-// };
-
-// function loadImagePicker() {
-//     ImagePicker.showImagePicker(options, response => {
-
-//         if(response.didCancel){
-//             console.log('user cancelled image picker');
-//         } else if (response.error){
-//             console.log('ImagePicker Error: ', response.error );
-//         }else if (response.customButton){
-//             console.log('User tapped custom button: ', response.customButton);
-//         }else {
-//             console.log(response.data);
-
-//         };
-//     })
-// } onPress={loadImagePicker}
-
+import {loadCameraPicker, loadImagePicker} from './functions/billingFunctions';
 
 export default function billing(){
-
-    let loadImagePicker = async () => {
-       let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync()
-       if(permissionResult.granted === false) {
-           alert('Permission to access camera is required');
-           return;
-       }
-       const pickerResult = await ImagePicker.launchCameraAsync()
-       console.log(pickerResult);
-    }
-
     return (
         <ScrollView>
-        <View style={styles.container}>
-       <Image source={require('../../assets/icon/facturaccion.png')}></Image>
-    <Text style={styles.title}>Facturación</Text>
-    <Text style={styles.subTitle}>Tiempo de consulta</Text>
-    <View style={styles.containerRow}>
-        <TouchableOpacity>
-            <Image source={require('../../assets/icon/mas.png')}></Image>
-        </TouchableOpacity>
-        <Text>130'</Text>
-        <TouchableOpacity>
-            <Image source={require('../../assets/icon/menos.png')}></Image>
-        </TouchableOpacity>
-    </View>
-    <View style={styles.containerRow}>
-        <TextInput style={styles.input} placeholder='Precio de consulta'/>
-        <TextInput style={styles.input} placeholder='Precio de segundo control'/>    
-    </View>
-    
-    <Text style={styles.parrafo}>DNI Lado A</Text>
-    <TouchableOpacity style={styles.buttonDNIA} onPress={loadImagePicker} >
-        <Text style={styles.textA}>DNI_cara_doctor_Carlos_Cáceres</Text>
-        <Image source={require('../../assets/icon/delete.png')}></Image>
-    </TouchableOpacity>
-    <Text style={styles.parrafo}>DNI Lado B</Text>
-    <TouchableOpacity style={styles.buttonDNIB}>
-        <Image source={require('../../assets/icon/upload.png')}></Image>
-        <Text style={styles.textB}>Arrasta aquí la imagen o selecciona para buscar en tu ordenador</Text>
-    </TouchableOpacity>
-
-    <TouchableOpacity style={styles.buttonContinuar} onPress={ ()=> alert('¡Registro completo!')}>
-        <Text style={styles.textButton}>Continuar</Text>
-    </TouchableOpacity>
-    </View>
-    </ScrollView>
+            <View style={styles.container}>
+                <Image source={require('../../assets/icon/facturaccion.png')}></Image>
+                <Text style={styles.title}>Facturación</Text>
+                <Text style={styles.subTitle}>Tiempo de consulta</Text>
+                <View style={styles.containerRow}>
+                    <TouchableOpacity>
+                        <Image source={require('../../assets/icon/mas.png')}></Image>
+                    </TouchableOpacity>
+                    <Text>130'</Text>
+                    <TouchableOpacity>
+                        <Image source={require('../../assets/icon/menos.png')}></Image>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.containerRow}>
+                    <TextInput style={styles.input} placeholder='Precio de consulta'/>
+                    <TextInput style={styles.input} placeholder='Precio de segundo control'/>    
+                </View>
+                <Text style={styles.parrafo}>DNI Lado A</Text>
+                <TouchableOpacity style={styles.buttonDNIA} onPress={loadCameraPicker} >
+                    <Text style={styles.textA}>DNI_cara_doctor_Carlos_Cáceres</Text>
+                    <Image source={require('../../assets/icon/delete.png')}></Image>
+                </TouchableOpacity>
+                <Text style={styles.parrafo}>DNI Lado B</Text>
+                <TouchableOpacity style={styles.buttonDNIB} onPress={loadImagePicker}>
+                    <Image source={require('../../assets/icon/upload.png')}></Image>
+                    <Text style={styles.textB}>Arrasta aquí la imagen o selecciona para buscar en tu ordenador</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.buttonContinuar} onPress={ ()=> alert('¡Registro completo!')}>
+                    <Text style={styles.textButton}>Continuar</Text>
+                </TouchableOpacity>
+            </View>
+        </ScrollView>
     );
 }
 
@@ -84,7 +46,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#F6F8FB',
         alignItems: 'center',
         justifyContent: 'center',
-        // paddingVertical: 10,
     },
     containerRow:{
         flex:1,
@@ -143,7 +104,7 @@ const styles = StyleSheet.create({
         paddingTop: 5,
         flexDirection: 'row',
         justifyContent: 'center',
-      },
+    },
     textA: {
         fontSize: 13,
         letterSpacing: 0.1,

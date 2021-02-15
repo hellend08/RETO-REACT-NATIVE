@@ -6,38 +6,32 @@ export default function login({navigation}){
     return (
       <ScrollView>
         <View style={styles.container}>
-        <Text style={styles.title}>Registro Médico</Text>
-        <Text style={{color: '#52575C'}}>Ingresa con tus redes sociales</Text>
-        <TouchableOpacity style={styles.buttonGoogle}>
-          <Text>
-            Continúa con Google
+          <Text style={styles.title}>Registro Médico</Text>
+          <Text style={{color: '#52575C'}}>Ingresa con tus redes sociales</Text>
+          <TouchableOpacity style={styles.buttonGoogle}>
+            <Text>Continúa con Google</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonLinkedin}>
+            <Text style={styles.textButton}>Continúa con Linkedin</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonFacebook}>
+            <Text style={styles.textButton}>Continúa con Facebook</Text>
+          </TouchableOpacity>
+          <Text style={{color: '#52575C', marginVertical: 20}}>Ingresa tus credenciales de acceso</Text>
+          <TextInput placeholder='Correo electrónico o número telefónico' style={styles.input}/>
+          <TextInput placeholder='Contraseña'style={styles.input}/>
+          <View  style={styles.section}>
+            <CheckBox style={styles.checkbox}/>
+            <Text
+              style={{fontSize:13, color: '#52575C', marginVertical: 10, marginHorizontal: 25}}>
+              He leído y acepto los términos y condiciones y la politica de uso de datos
             </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonLinkedin}>
-          <Text style={styles.textButton}>
-            Continúa con Linkedin
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonFacebook}>
-          <Text style={styles.textButton}>
-            Continúa con Facebook
-          </Text>
-        </TouchableOpacity>
-        <Text style={{color: '#52575C', marginVertical: 20}}>Ingresa tus credenciales de acceso</Text>
-        <TextInput placeholder='Correo electrónico o número telefónico' style={styles.input}/>
-        <TextInput placeholder='Contraseña'style={styles.input}/>
-        <View  style={styles.section}>
-        <CheckBox style={styles.checkbox}/>
-        <Text
-          style={{fontSize:13, color: '#52575C', marginVertical: 10, marginHorizontal: 25}}>
-          He leído y acepto los términos y condiciones y la politica de uso de datos
-        </Text>
+          </View>
+          <TouchableOpacity style={styles.buttonRegistry} onPress = {() => navigation.navigate('contact')}>
+            <Text>REGISTRARME</Text>
+          </TouchableOpacity>
+          <StatusBar style="auto" />
         </View>
-        <TouchableOpacity style={styles.buttonRegistry} onPress = {() => navigation.navigate('contact')}>
-          <Text>REGISTRARME</Text>
-        </TouchableOpacity>
-        <StatusBar style="auto" />
-      </View>
       </ScrollView>
     );
 }

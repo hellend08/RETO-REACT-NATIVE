@@ -20,13 +20,11 @@ export default function contact({navigation}){
             <View style={styles.containerRow}>
                 <Text>Género</Text>
                 <TouchableOpacity style={styles.select}>
-                    <Image source={require('../../assets/icon/deselected.png')}></Image>
-                   
+                    <Image source={require('../../assets/icon/deselected.png')}></Image>    
                 </TouchableOpacity>
                 <Text>Femenino</Text>
                 <TouchableOpacity style={styles.select}>
                     <Image source={require('../../assets/icon/deselected.png')}></Image>
-                    
                 </TouchableOpacity>
                 <Text>Masculino</Text>
             </View>
