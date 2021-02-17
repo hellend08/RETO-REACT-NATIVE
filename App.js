@@ -1,14 +1,13 @@
 import 'react-native-gesture-handler';
 
 import React from 'react';
-// import { StyleSheet, Text, View, TouchableOpacity, TextInput, CheckBox, Image} from 'react-native';
-// import {icono} from './assets/icon.png';
 import { NavigationContainer } from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import contact from './src/views/contact';
 import login from './src/views/login';
 import formation from './src/views/formation';
 import billing from './src/views/billing';
+
 
 
 const Stack = createStackNavigator();

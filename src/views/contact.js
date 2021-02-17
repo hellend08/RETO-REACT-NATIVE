@@ -10,13 +10,22 @@ export default function contact({navigation}){
             <Text style={styles.title}>Contacto</Text>
             <View style={styles.containerRow}>
                 <TextInput style={styles.input} placeholder='Tipo de documento'/>
-                <TextInput style={styles.input} placeholder='N° Documento'/>    
+                <TouchableOpacity style={{position: 'absolute', left: 145, top: 30 }} >
+                <Image source={require('../../assets/icon/polygon.png')}></Image>
+                </TouchableOpacity>
+                <TextInput maxLength={8} keyboardType={'numeric'} style={styles.input} placeholder='N° Documento'/>    
             </View>
             <View style={styles.containerRow}>
-                <TextInput style={styles.input} placeholder='Fecha de nacimiento' />
-                <TextInput style={styles.input} placeholder='N° RUC'/>
+                <TextInput maxLength={10} keyboardType={'numeric'} style={styles.input} placeholder='Fecha de nacimiento' />
+                <TouchableOpacity style={{position: 'absolute', left: 145, top: 22 }} >
+                <Image source={require('../../assets/icon/calendary.png')}></Image>
+                </TouchableOpacity>
+                <TextInput maxLength={11} keyboardType={'numeric'} style={styles.input} placeholder='N° RUC'/>
             </View>
-            <TextInput style={styles.inputExtend} placeholder='Correo electrónico'/>
+            <View style={{flexDirection: 'row'}}>
+            <TextInput keyboardType={'email-address'} style={styles.inputExtend} placeholder='Correo electrónico'/>
+                <Image style={{position: 'absolute', left: 300, top: 30 }} source={require('../../assets/icon/email.png')}></Image>
+                </View>
             <View style={styles.containerRow}>
                 <Text>Género</Text>
                 <TouchableOpacity style={styles.select}>

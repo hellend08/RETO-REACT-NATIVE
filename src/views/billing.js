@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView} from 'react-native';
-import {loadCameraPicker, loadImagePicker} from './functions/billingFunctions';
+import {loadCameraPicker, loadImagePicker} from './functions/allFunctions';
 
 export default function billing(){
     return (
@@ -19,8 +19,8 @@ export default function billing(){
                     </TouchableOpacity>
                 </View>
                 <View style={styles.containerRow}>
-                    <TextInput style={styles.input} placeholder='Precio de consulta'/>
-                    <TextInput style={styles.input} placeholder='Precio de segundo control'/>    
+                    <TextInput maxLength={10} keyboardType={'numeric'} style={styles.input} placeholder='Precio de consulta'/>
+                    <TextInput multiline={true} maxLength={10} keyboardType={'numeric'} style={styles.input} placeholder='Precio de segundo control'/>    
                 </View>
                 <Text style={styles.parrafo}>DNI Lado A</Text>
                 <TouchableOpacity style={styles.buttonDNIA} onPress={loadCameraPicker} >

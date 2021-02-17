@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView} from 'react-native';
+// import { addExperience } from './functions/allFunctions';
 
 export default function formation({navigation}){
    return (
@@ -25,12 +26,14 @@ export default function formation({navigation}){
                 <TextInput style={styles.input} placeholder='Empresa'/>
                 <TextInput style={styles.input} placeholder='Puesto'/>
                 <TouchableOpacity>
+                   
                     <Image style={styles.vector} source={require('../../assets/icon/vector.png')}></Image>
+                    <TextInput style={styles.input, {display: 'none'}} placeholder='Puesto'/>
                 </TouchableOpacity>
             </View>
             <Text style={styles.textH2}>Añadir reconocimiento</Text>
             <View style={styles.containerRow}>
-                <TextInput style={styles.inputExtend} placeholder='Reconocimientos'/>
+                <TextInput multiline={true} style={styles.inputExtend} placeholder='Reconocimientos'/>
                 <TouchableOpacity>
                     <Image style={styles.vector} source={require('../../assets/icon/vector.png')}></Image>
                 </TouchableOpacity>
