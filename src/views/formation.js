@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView} from 'react-native';
-// import { addExperience } from './functions/allFunctions';
 
-export default function formation({navigation}){
+export default class formation extends Component{
+    render() {
    return (
     <ScrollView>
         <View style={styles.container}>
@@ -13,23 +13,22 @@ export default function formation({navigation}){
             </TouchableOpacity>
             <Text style={styles.subTitle}>Valida tu perfil profesional con Linkedin</Text>
             <View style={styles.containerRow}>
-                <TextInput style={styles.input} placeholder='Pregrado'/>
-                <TextInput style={styles.input} placeholder='CMP'/>
+                <TextInput multiline={true} style={styles.input} placeholder='Pregrado'/>
+                <TextInput multiline={true} style={styles.input} placeholder='CMP'/>
             </View>
             <Text style={styles.textH2}>Añadir especializaciones</Text>
             <View style={styles.containerRow}>
-                <TextInput style={styles.input} placeholder='Postgrado' />
-                <TextInput style={styles.input} placeholder='Especialidad'/>
+                <TextInput multiline={true} style={styles.input} placeholder='Postgrado' />
+                <TextInput multiline={true} style={styles.input} placeholder='Especialidad'/>
             </View>
             <Text style={styles.textH2}>Experiencia laboral</Text>
             <View style={styles.containerRow}>
-                <TextInput style={styles.input} placeholder='Empresa'/>
-                <TextInput style={styles.input} placeholder='Puesto'/>
+                <TextInput multiline={true} style={styles.input} placeholder='Empresa'/>
+                <TextInput multiline={true} style={styles.input} placeholder='Puesto'/>
                 <TouchableOpacity>
-                   
                     <Image style={styles.vector} source={require('../../assets/icon/vector.png')}></Image>
-                    <TextInput style={styles.input, {display: 'none'}} placeholder='Puesto'/>
                 </TouchableOpacity>
+                <TextInput multiline={true} style={styles.input, {display: 'none'}} placeholder='Puesto'/>
             </View>
             <Text style={styles.textH2}>Añadir reconocimiento</Text>
             <View style={styles.containerRow}>
@@ -38,12 +37,13 @@ export default function formation({navigation}){
                     <Image style={styles.vector} source={require('../../assets/icon/vector.png')}></Image>
                 </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.buttonContinuar} onPress = {() => navigation.navigate('billing')}>
+            <TouchableOpacity style={styles.buttonContinuar} onPress = {() => this.props.navigation.navigate('billing')}>
                 <Text style={styles.textButton}>Continuar</Text>
             </TouchableOpacity>
         </View>
     </ScrollView>
     );
+}
 }
 
 const styles = StyleSheet.create({
@@ -52,7 +52,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#F6F8FB',
         alignItems: 'center',
         justifyContent: 'center',
-        // paddingVertical: 20,
     },
     containerRow:{
         flex:1,

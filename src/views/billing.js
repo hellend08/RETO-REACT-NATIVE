@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView} from 'react-native';
 import {loadCameraPicker, loadImagePicker} from './functions/allFunctions';
 
-export default function billing(){
+export default class billing extends Component{
+    render() {
     return (
         <ScrollView>
             <View style={styles.container}>
@@ -38,6 +39,7 @@ export default function billing(){
             </View>
         </ScrollView>
     );
+}
 }
 
 const styles = StyleSheet.create({

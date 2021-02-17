@@ -1,31 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, CheckBox, ScrollView, Image } from 'react-native';
-// import { render } from 'react-dom';
-
-// export default class prueba extends Component {
-//   constructor(){
-//     super()
-//     this.state = {
-//       email: '',
-//       password: '',
-//     }
-//   }
-//   changeEmail(email){
-//     this.setState({email})
-//   }
-//   changePassword(password){
-//     this.setState({password})
-//   }
-// }
-
-
-
-export default function login({navigation}) {
-
   
-  
-  // render()
+export default class login extends Component {
+
+render() {
     return (
       <ScrollView>
         <View style={styles.container}>
@@ -56,7 +35,8 @@ export default function login({navigation}) {
               secureTextEntry={true} 
               placeholder='Contraseña' 
               style={styles.input}/>
-            <TouchableOpacity style={{position: 'absolute', left: 285, paddingTop: 15}} >
+            <TouchableOpacity 
+            style={{position: 'absolute', left: 285, paddingTop: 15}} >
               <Image source={require('../../assets/icon/eye.png')}></Image>
             </TouchableOpacity>
           </View>
@@ -67,13 +47,14 @@ export default function login({navigation}) {
               He leído y acepto los términos y condiciones y la politica de uso de datos
             </Text>
           </View>
-          <TouchableOpacity style={styles.buttonRegistry} onPress = {() => navigation.navigate('contact')}>
+          <TouchableOpacity style={styles.buttonRegistry} onPress = {() => this.props.navigation.navigate('contact')} >
             <Text>REGISTRARME</Text>
           </TouchableOpacity>
           <StatusBar style="auto" />
         </View>
       </ScrollView>
     );
+  }
 }
 
 const styles = StyleSheet.create({

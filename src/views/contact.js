@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView} from 'react-native';
 
 
-export default function contact({navigation}){
+export default class contact extends Component {
+    render() {
    return (
     <ScrollView>
         <View style={styles.container}>
@@ -11,7 +12,7 @@ export default function contact({navigation}){
             <View style={styles.containerRow}>
                 <TextInput style={styles.input} placeholder='Tipo de documento'/>
                 <TouchableOpacity style={{position: 'absolute', left: 145, top: 30 }} >
-                <Image source={require('../../assets/icon/polygon.png')}></Image>
+                    <Image source={require('../../assets/icon/polygon.png')}></Image>
                 </TouchableOpacity>
                 <TextInput maxLength={8} keyboardType={'numeric'} style={styles.input} placeholder='N° Documento'/>    
             </View>
@@ -37,12 +38,13 @@ export default function contact({navigation}){
                 </TouchableOpacity>
                 <Text>Masculino</Text>
             </View>
-            <TouchableOpacity style={styles.buttonContinuar} onPress = {() => navigation.navigate('formation')}>
+            <TouchableOpacity style={styles.buttonContinuar} onPress = {() => this.props.navigation.navigate('formation')}>
                 <Text style={styles.textButton}>Continuar</Text>
             </TouchableOpacity>
         </View>
     </ScrollView>
     );
+}
 }
 
 const styles = StyleSheet.create({
